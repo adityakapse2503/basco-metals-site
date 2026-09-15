@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Clock3, Mail, MapPin, Phone, Upload } from "lucide-react";
+import { ArrowRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 const GRADE_OPTIONS = [
   "BARLEY",
@@ -212,18 +212,6 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Tell us about your material, condition, photos, or any other details..."
             />
-          </label>
-          <label className="contact-form__wide">
-            Upload Photos / Documents
-            <input
-              className="contact-form__file"
-              type="file"
-              multiple
-              accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
-            />
-            <small>
-              <Upload size={13} /> You can upload multiple files.
-            </small>
           </label>
         </div>
         {submitError && (
