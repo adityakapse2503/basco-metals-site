@@ -18,7 +18,7 @@ export default function HomeHero() {
     <section className="copper-hero" id="home">
       <div className="copper-hero__image" aria-hidden="true">
         <img
-          src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?q=80&w=2000&auto=format&fit=crop"
+          src="/images/Banners/copper-grades-banner.jpg"
           alt=""
         />
       </div>
