@@ -49,7 +49,7 @@ function Brand({ light = false }) {
     <span className={`brand ${light ? "brand--light" : ""}`}>
       <img
         className="brand__image"
-        src={light ? "/images/basco-metals-logo.png" : "/images/logo.png"}
+        src={light ? "/images/Logos/basco-metals-logo.png" : "/images/Logos/logo.png"}
         alt="Basco Metals"
       />
     </span>

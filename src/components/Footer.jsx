@@ -31,7 +31,8 @@ export default function Footer() {
         </div>
         <div className="site-footer__column site-footer__contact" id="contact">
           <h2>CONTACT US</h2>
-          <p><MapPin size={15} />118-21 Queens Boulevard, Suite 413<br />Forest Hills, NY 11375</p>
+          <p>
+            <MapPin size={15} />118-21 Queens Boulevard, Suite 413<br />Forest Hills, NY 11375</p>
           <a href="tel:+19176273000"><Phone size={15} />917-627-3000</a>
           <a href="mailto:jb@bascometals.com"><Mail size={15} />jb@bascometals.com</a>
         </div>
@@ -42,12 +43,12 @@ export default function Footer() {
         </div>
       </div>
       <div className="site-footer__bar">
-        <span>&copy; 2024 BASCO METALS. All rights reserved.</span>
-        <div>
+        <span>&copy; 2026 BASCO METALS. All rights reserved.</span>
+        {/* <div>
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a className="site-footer__linkedin" href="/linkedin" aria-label="LinkedIn">in</a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
