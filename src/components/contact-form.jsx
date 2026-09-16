@@ -251,7 +251,7 @@ export default function ContactForm() {
         </p>
         <div className="contact-info__image">
           <img
-            src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=900&auto=format&fit=crop"
+            src="/images/Banners/contact-form.png"
             alt="Cargo ship at sunset"
           />
           <strong>

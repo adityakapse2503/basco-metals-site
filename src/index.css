@@ -433,7 +433,7 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(4, 15, 22, 0.96), rgba(4, 15, 22, 0.78)),
-    url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2000&auto=format&fit=crop")
+    url("../public/images/Banners/process-banner.png")
       center/cover;
 }
 .why-sell__inner {
@@ -615,12 +615,12 @@ h2 {
 .have-copper__content::before {
   background-image:
     linear-gradient(90deg, rgba(13, 11, 10, 0.48), rgba(13, 11, 10, 0.3)),
-    url("https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1200&auto=format&fit=crop");
+    url("/images/Banners/sell-to-us.png");
 }
 .have-copper__partner::before {
   background-image:
     linear-gradient(90deg, rgba(5, 21, 29, 0.84), rgba(5, 21, 29, 0.4)),
-    url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop");
+    url("/images/Banners/process-banner.png");
 }
 .have-copper h2 {
   position: relative;
@@ -972,13 +972,13 @@ h2 {
       rgba(3, 14, 21, 0.76) 56%,
       rgba(3, 14, 21, 0.18) 100%
     ),
-    url("/images/Banners/copper-grades-banner.jpg")
+    url("/images/Banners/about-banner.png")
       center/cover;
 }
 .about-hero__content {
   width: min(1140px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 34px 0;
+  padding: 100px 0;
 }
 .about-hero__eyebrow {
   display: flex;
@@ -1210,7 +1210,7 @@ h2 {
       rgba(3, 9, 12, 0.76) 55%,
       rgba(3, 9, 12, 0.15) 100%
     ),
-    url("/images/Banners/suppliers-banner.jpg") center/cover;
+    url("/images/Banners/sell-to-us.png") center/cover;
 }
 .sell-to-us-banner__inner {
   position: relative;
@@ -1318,7 +1318,7 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(4, 16, 23, 0.88), rgba(4, 16, 23, 0.28)),
-    url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2000&auto=format&fit=crop")
+    url("/images/Banners/about-banner.png")
       center/cover;
 }
 .sell-to-us-bottom__inner {
@@ -1355,7 +1355,7 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(3, 14, 20, 0.94), rgba(3, 14, 20, 0.65)),
-    url("/images/Banners/copper-grades-banner.jpg")
+    url("/images/Banners/process-banner.png")
       center/cover;
 }
 .process-hero__inner {
@@ -1467,7 +1467,7 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(24, 10, 6, 0.55), rgba(24, 10, 6, 0.2)),
-    url("https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1600&auto=format&fit=crop")
+    url("../public/images/Banners/process-bottom.png")
       center/cover;
 }
 .process-bottom__inner {
@@ -1507,13 +1507,13 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(3, 14, 20, 0.92), rgba(3, 14, 20, 0.2)),
-    url("/images/Banners/copper-grades-banner.jpg")
+    url("/images/Banners/about-banner.png")
       center/cover;
 }
 .inquiry-submitted-banner__inner {
   position: relative;
   width: min(1140px, calc(100% - 80px));
-  min-height: 226px;
+  min-height: 300px;
   margin: 0 auto;
   padding: 88px 0 50px;
 }

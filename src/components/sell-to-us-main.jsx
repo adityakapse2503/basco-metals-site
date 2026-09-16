@@ -15,7 +15,7 @@ export default function SellToUsMain() {
     <section className="sell-to-us-main" id="sell-to-us-form">
       <div className="sell-to-us-main__image">
         <img
-          src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1200&auto=format&fit=crop"
+          src="/images/Banners/sell-to-us-img.png"
           alt="Copper scrap prepared for sale"
         />
       </div>
