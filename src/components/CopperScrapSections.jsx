@@ -103,7 +103,7 @@ const grades = [
     grade: "No. 2 Copper Wire",
     desc: "Unalloyed copper wire meeting grade specifications.",
     cta: "SELL BIRCH",
-    img: "/images/Copper Grades/BIRCH",
+    img: "/images/Copper Grades/BIRCH2",
   },
   {
     code: "CLIFF",
