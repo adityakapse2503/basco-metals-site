@@ -856,6 +856,13 @@ h2 {
   background: transparent;
 }
 
+@media (min-width: 1024px) {
+  .font-sans {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 850px) {
   .site-header {
     position: relative;
