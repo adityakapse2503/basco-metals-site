@@ -147,10 +147,13 @@ h2 span,
 }
 .hero-features {
   width: 200px;
-  flex: 0 0 200px;
-  display: flex;
+  /* flex: 0 0 200px;
+  display: flex; */
   flex-direction: column;
   gap: 17px;
+      flex: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 .hero-feature {
   display: flex;

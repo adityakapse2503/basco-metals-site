@@ -33,13 +33,13 @@ export default function Footer() {
           <h2>CONTACT US</h2>
           <p>
             <MapPin size={15} />118-21 Queens Boulevard, Suite 413<br />Forest Hills, NY 11375</p>
-          <a href="tel:+19176273000"><Phone size={15} />917-627-3000</a>
-          <a href="mailto:jb@bascometals.com"><Mail size={15} />jb@bascometals.com</a>
+          {/* <a href="tel:+19176273000"><Phone size={15} />917-627-3000</a>
+          <a href="mailto:jb@bascometals.com"><Mail size={15} />jb@bascometals.com</a> */}
         </div>
         <div className="site-footer__column site-footer__mission">
           <h2>OUR MISSION</h2>
           <p>To build a dependable global supply network connecting quality copper scrap suppliers with real industrial demand.</p>
-          <div className="site-footer__signoff">Scrap Today.<br />Resources Tomorrow.<span /></div>
+          {/* <div className="site-footer__signoff">Scrap Today.<br />Resources Tomorrow.<span /></div> */}
         </div>
       </div>
       <div className="site-footer__bar">

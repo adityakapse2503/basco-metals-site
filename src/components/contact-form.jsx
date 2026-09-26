@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Clock3, MapPin } from "lucide-react";
 
 const GRADE_OPTIONS = [
   "BARLEY",
@@ -236,13 +236,13 @@ export default function ContactForm() {
           <br />
           Forest Hills, NY 11375
         </p>
-        <a href="tel:+19176273000">
+        {/* <a href="tel:+19176273000">
           <Phone /> 917-627-3000
         </a>
         <a href="mailto:jb@bascometals.com">
           <Mail /> jb@bascometals.com
         </a>
-        <hr />
+        <hr /> */}
         <h2>BUSINESS HOURS</h2>
         <p>
           <Clock3 /> Monday - Friday

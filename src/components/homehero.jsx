@@ -86,12 +86,12 @@ export default function HomeHero() {
             </div>
           ))}
 
-          <p className="hero-signoff">
+          {/* <p className="hero-signoff">
             Turning Scrap
             <br />
             into a Brighter Tomorrow.
             <span />
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
