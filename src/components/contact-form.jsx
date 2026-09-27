@@ -69,52 +69,33 @@ export default function ContactForm() {
       return;
     }
 
-    const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
-    const formId = import.meta.env.VITE_HUBSPOT_FORM_ID;
+    const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
-    if (!portalId || !formId) {
-      // console.log("portalId:", portalId, "formId:", formId);
+    if (!scriptUrl) {
       setSubmitError(
         "The inquiry form is not configured yet. Please contact us directly.",
       );
       return;
     }
+
     setIsSubmitting(true);
     setSubmitError("");
 
-    const fields = [
-      ["firstname", formData.name],
-      ["company", formData.company],
-      ["email", formData.email],
-      ["phone", formData.phone],
-      ["material_grade", formData.grade],
-      ["available_quantity", formData.quantity],
-      ["monthly_quantity", formData.monthly_quantity],
-      ["material_location", formData.location],
-      ["asking_price", formData.price],
-      ["additional_information", formData.message],
-    ].map(([name, value]) => ({ objectTypeId: "0-1", name, value }));
-
     try {
-      const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ fields }),
-        },
-      );
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors", // Apps Script doesn't return readable CORS headers
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+        keepalive: true,
+      });
 
-      if (!response.ok) {
-        const result = await response.json().catch(() => null);
-        throw new Error(result?.message || "Unable to submit your inquiry.");
-      }
-
+      // no-cors means we can't inspect the response, so we assume success
+      // if fetch didn't throw a network-level error
       window.location.assign("/inquiry-submitted");
     } catch (error) {
       setSubmitError(
-        error.message ||
-          "There was an error submitting your inquiry. Please try again.",
+        "There was an error submitting your inquiry. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -236,13 +217,6 @@ export default function ContactForm() {
           <br />
           Forest Hills, NY 11375
         </p>
-        {/* <a href="tel:+19176273000">
-          <Phone /> 917-627-3000
-        </a>
-        <a href="mailto:jb@bascometals.com">
-          <Mail /> jb@bascometals.com
-        </a>
-        <hr /> */}
         <h2>BUSINESS HOURS</h2>
         <p>
           <Clock3 /> Monday - Friday
