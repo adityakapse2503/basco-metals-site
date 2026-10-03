@@ -1987,3 +1987,17 @@ h2 {
     gap: 12px;
   }
 }
+
+/* new css */
+.grade-card__description {
+    min-height: 3lh;
+}
+.grade-card__button {
+    font-size: 10px;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .grade-card__body .grade-card__button {
+    font-size: 9px;
+  }
+}
