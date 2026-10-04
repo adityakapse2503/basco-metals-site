@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { ArrowRight, Clock3, MapPin } from "lucide-react";
 
 const GRADE_OPTIONS = [
@@ -32,6 +33,8 @@ function validateEmail(value) {
 }
 
 export default function ContactForm() {
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
   const [formData, setFormData] = useState(initialForm);
   const [emailError, setEmailError] = useState("");
   const [submitError, setSubmitError] = useState("");
@@ -69,6 +72,11 @@ export default function ContactForm() {
       return;
     }
 
+    if (!captchaToken) {
+      setSubmitError("Please confirm you're not a robot.");
+      return;
+    }
+
     const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
     if (!scriptUrl) {
@@ -84,9 +92,9 @@ export default function ContactForm() {
     try {
       await fetch(scriptUrl, {
         method: "POST",
-        mode: "no-cors", // Apps Script doesn't return readable CORS headers
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, captchaToken }),
         keepalive: true,
       });
 
@@ -97,6 +105,9 @@ export default function ContactForm() {
       setSubmitError(
         "There was an error submitting your inquiry. Please try again.",
       );
+      // tokens are single-use, so reset after any failed attempt
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -194,16 +205,27 @@ export default function ContactForm() {
               placeholder="Tell us about your material, condition, photos, or any other details..."
             />
           </label>
+          <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+          onChange={(token) => {
+            setCaptchaToken(token);
+            setSubmitError("");
+          }}
+          onExpired={() => setCaptchaToken(null)}
+        />
         </div>
         {submitError && (
           <p className="contact-form__error" role="alert">
             {submitError}
           </p>
         )}
+        
         <button
           className="button button--orange contact-form__submit"
           type="submit"
-          disabled={isSubmitting}
+          // disabled={isSubmitting}
+          disabled={isSubmitting || !captchaToken}
         >
           {isSubmitting ? "SUBMITTING..." : "SUBMIT INQUIRY"}{" "}
           <ArrowRight size={16} />
