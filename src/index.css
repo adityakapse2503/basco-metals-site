@@ -326,7 +326,7 @@ h2 {
       rgba(4, 9, 11, 0.62) 42%,
       rgba(4, 9, 11, 0.12) 100%
     ),
-    url("/images/Banners/copper-grades-banner.jpg") center/cover;
+    url("/images/Banners/copper-grades-banner.png") center/cover;
 }
 .copper-grades-hero__inner {
   position: relative;
@@ -1634,7 +1634,7 @@ h2 {
       rgba(3, 13, 18, 1) 25%,
       rgba(3, 13, 18, 0) 65%
     ),
-    url("/images/Banners/suppliers-banner.jpg") center/cover;
+    url("/images/Banners/suppliers-banner.png") center/cover;
 }
 .contact-banner__inner {
   position: relative;
